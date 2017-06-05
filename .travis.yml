@@ -18,7 +18,6 @@ before_install:
 
 install:
   - conda install -q python=$TRAVIS_PYTHON_VERSION pip conda-build anaconda-client
-  - pip install coveralls
   - conda build recipe/
   - conda install --use-local statusbar
 
