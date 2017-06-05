@@ -1,0 +1,33 @@
+{% set user = "mailund" %}
+{% set name = "statusbar" %}
+{% set version = "0.1.4" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/{{ user }}/{{ name }}/archive/v{{ version }}.tar.gz
+
+build:
+  noarch_python: True
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - termcolor >=1.1.0
+
+  run:
+    - python
+    - termcolor >=1.1.0
+
+test:
+  imports:
+    - statusbar
+
+about:
+  home: https://github.com/{{ user }}/{{ name }}
+  license: GNU General Public License v3 or later (GPLv3+)
+  summary: 'Module for displaying (text based) status update lines.'
+  license_family: GPL3
