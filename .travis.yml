@@ -22,8 +22,6 @@ install:
   - conda build recipe/
   - conda install --use-local statusbar
 
-script: python setup.py test
-
 after_success:
   - chmod +x ./deploy_conda.sh
 
