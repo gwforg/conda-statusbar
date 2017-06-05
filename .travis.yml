@@ -19,8 +19,9 @@ before_install:
 
 install:
   - conda install -q python=$TRAVIS_PYTHON_VERSION pip conda-build anaconda-client
+
+script:
   - conda build recipe/
-  - conda install --use-local statusbar
 
 after_success:
   - chmod +x ./deploy_conda.sh
